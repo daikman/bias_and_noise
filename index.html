@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bias and Noise</title>
+    <style media="screen">
+      .visible {
+        color: black;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      h1 {
+        font-family: "DotGothic16", sans-serif;
+      }
+      img {
+        transition: width 0.5s;
+      }
+      img:hover {
+        width: 42px;
+      }
+      .main-content {
+        padding-left: 10%;
+        padding-right:20%
+      }
+      .invisible {
+        color: white;
+      }
+      #sidehead {
+        position: fixed;
+        margin-left: 100px;
+        writing-mode: vertical-rl;
+        transition: color 0.2s;
+      }
+      #heading {
+        position: fixed;
+        transition: transform 0.1s;
+      }
+      .vertic {
+        /* transform-origin: left; */
+        transform: translate(0%, 150px) rotate(90deg);
+      }
+      .down {
+        transform: translate(0, 100px);
+      }
+    </style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DotGothic16">
+  </head>
+  <body onresize="check_size_and_move();">
+    <h1 id="heading" style="margin-left: 20px;">Bias and Noise</h1>
+    <!-- <h1 id="sidehead" class="invisible">Bias and Noise</h1>
+    <!-- <div style="background-color: blue; width: 10%; height: 100%; position: fixed; border-radius: 10px;">
+
+    </div> -->
+    <div style="position: fixed; margin-top: 80px; margin-left: 50px; z-index: 10; background-color: #f2f2f2; padding: 10px; border-radius: 36px;">
+      <a href="">
+        <img src="images/GitHub-Mark-64px.png" alt="code for this page" width="32px">
+      </a>
+      <br>
+      <br>
+      <a href="https://daikman.com" target="blank_">
+        <img src="images/me_2d.jpg" alt="link to my website" width="32px" style="border-radius: 60px">
+      </a>
+
+      <br>
+      <br>
+      <a href="https://twitter.com/ResearchingDave" target="_blank">
+        <img src="images/twitter.png" alt="link to my twitter" width="32px">
+      </a>
+    </div>
+
+    <div class="main-content down">
+      <div id = "sketch" style="right: 50px; margin-right: 50px; height: 30em; width: 30em;  position: fixed;">
+          <iframe src="./sketch/sketch.html" width="100%" height="100%" style="border-style: none;"></iframe>
+      </div>
+      <div style="width: 50%; margin-left: 50px">
+          Imagine you’ve hit this target 20 times, with whatever weapon you’d like. Your hits are represented by the yellow dots. You were trying to hit the bullseye, but you might not have been completely accurate. There might have been some bias in your aim, which means you are accidentally aiming at a point other than the bullseye. And there might have been some noise. This means you do not hit where you are aiming 100% of the time.
+          <br>
+          <br>
+          Increasing the noise using the slider increases the distance between the dots and the centre of the dots (where the dashed blue lines meet) on average. When you increase the bias, the centre of the dots moves further away from the bullseye. A blue line shows how biased the aim is, and a blue circle shows other points on the target with the same level of bias (they are the same distance from the bullseye).
+          <br>
+          <br>
+          One interesting thing I noticed when making this demonstration is that when there is any bias in your aim, you need noise in order to ever hit the bullseye. So there are cases when noise would be beneficial.
+          <br>
+          <br>
+          Outside of this nice target example, bias and noise are relevant in many domains, including everyday decision-making. Whenever you (or a machine) needs to make a series of decisions, you are probably not going to be 100% accurate - there will be some error. How much of this error is caused by accidentally aiming in the wrong place (bias) and how much is caused by not hitting the place you’re aiming for (noise)? This is an important distinction if you want to know how to reduce error.
+          <br>
+          <br>
+          For example, if you are creating a budget for the next year, you might want to estimate how much money you will be spending each month. Are you systematically over/under-estimating? This would be bias. And are you randomly making mistakes with no particular direction? That would be noise. In this case, you may actually want bias, as over-estimates of monthly spending might lead to more frugal decision-making, reducing the risk of over-spending in a given month. A lot of noise might be a   problem, though, as highly inconsistent spending estimates may undermine decisions based on those estimates.
+          <br>
+          <br>
+          Here are a couple interesting articles about bias and noise:
+          <ul>
+            <li>
+              Reducing Discrimination: A Bias Versus Noise Perspective. Axt, J. R., & Lai, C. K. (2019). Journal of personality and social psychology, 117(1), 26.
+            </li>
+            <li>
+              Noise. Kahneman, D., Rosenfield, A. M., Gandhi, L., & Blaser, T. (2016). Harvard Bus Rev, 38-46.
+            </li>
+          </ul>
+
+          <br>
+          <br>
+
+      </div>
+    </div>
+
+    <script>
+      var check_size_and_move = function() {
+        if (window.innerWidth < 1200) {
+          window.location = "small.html";
+        }
+      }
+      check_size_and_move();
+
+      // When the user scrolls the page, execute myFunction
+      window.onscroll = function() {myFunction()};
+
+      // Get the header
+      var header = document.getElementById("heading");
+      // var new_header = document.getElementById("sidehead")
+
+      // Get the offset position of the navbar
+      var sticky = 70;
+
+      // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+      function myFunction() {
+        if (window.pageYOffset > sticky) {
+          // new_header.classList.remove("invisible");
+          // new_header.classList.add("visible");
+          header.classList.add("vertic");
+          //header.classList.add("down");
+        } else {
+          // new_header.classList.remove("visible");
+          // new_header.classList.add("invisible");
+          header.classList.remove("vertic");
+          //header.classList.remove("down");
+        }
+      }
+    </script>
+
+  </body>
+</html>
