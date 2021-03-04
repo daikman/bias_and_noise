@@ -6,5 +6,5 @@ See the demo here: https://daikman.github.io/bias_and_noise/
 
 For the `p5` sketch only: https://daikman.github.io/bias_and_noise/sketch/sketch.html
 
-![preview of the demo](preview.png)
+![preview of the demo](./preview.PNG)
 
