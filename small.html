@@ -9,12 +9,6 @@
         top: 0;
         width: 100%;
       }
-      img {
-        transition: width 0.5s;
-      }
-      img:hover {
-        width: 42px;
-      }
       body {
         font-family: "Roboto", sans-serif;
       }
@@ -28,20 +22,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DotGothic16">
   </head>
-  <body onresize="check_size_and_move();" scrolling="no" style="padding: 10%;">
+  <body onresize="check_size_and_move();" scrolling="no" style="padding: 10%; overflow: hidden;">
     <h1 id="headging">Bias and Noise</h1>
-
+    <div class="">
+      <a href="">
+        <img src="images/GitHub-Mark-64px.png" alt="code for this page" width="32px">
+      </a>
+      <a href="https://daikman.com" target="blank_">
+        <img src="images/me_2d.jpg" alt="link to my website" width="32px" style="border-radius: 60px">
+      </a>
+      <a href="https://twitter.com/ResearchingDave" target="_blank">
+        <img src="images/twitter.png" alt="link to my twitter" width="32px">
+      </a>
+    </div>
     <iframe src="./sketch/sketch.html" width="100%" height="400px" style="border-style: none;"></iframe>
 
-    <a href="">
-      <img src="images/GitHub-Mark-64px.png" alt="code for this page" width="32px">
-    </a>
-    <a href="https://daikman.com" target="blank_">
-      <img src="images/me_2d.jpg" alt="link to my website" width="32px" style="border-radius: 60px">
-    </a>
-    <a href="https://twitter.com/ResearchingDave" target="_blank">
-      <img src="images/twitter.png" alt="link to my twitter" width="32px">
-    </a>
+
 
 
     <!-- <div style="width: 50%; margin-left: 50px">
